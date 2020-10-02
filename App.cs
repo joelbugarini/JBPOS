@@ -12,8 +12,8 @@ namespace JBPOS
         {            
             Application.Init();
 
-            var menu = MainMenuBar.Create();
-            var win = MainWindow.Create("JBPOS");
+            var menu = Navigation.Create();
+            var win = WelcomeScreen.Render();
 
             Application.Top.Add(menu, win);
             Application.Run();
