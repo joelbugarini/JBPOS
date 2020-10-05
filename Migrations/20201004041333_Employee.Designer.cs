@@ -3,14 +3,16 @@ using JBPOS.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JBPOS.Migrations
 {
     [DbContext(typeof(JBPOS_DB_Context))]
-    partial class JBPOS_DB_ContextModelSnapshot : ModelSnapshot
+    [Migration("20201004041333_Employee")]
+    partial class Employee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

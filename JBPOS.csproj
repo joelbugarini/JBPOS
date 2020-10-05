@@ -22,11 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\Components\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Terminal.Gui">
       <HintPath>lib\Terminal.Gui.dll</HintPath>
       <Private>true</Private>

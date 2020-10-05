@@ -10,6 +10,7 @@ namespace JBPOS.DataContext
     public class JBPOS_DB_Context : DbContext
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         private IConfigurationBuilder config = new ConfigurationBuilder();
         protected override void OnConfiguring(DbContextOptionsBuilder options)

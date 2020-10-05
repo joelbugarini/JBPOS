@@ -1,0 +1,23 @@
+[<][[table]]using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace [[project.name]].Models
+{
+    public class [[table.name]]
+    {
+		[[column int]]public int [[column.name]] { get; set; }
+		[[/column int]][[column nchar]]public int [[column.name]]Id { get; set; }
+        [ForeignKey("[[column.name]]Id")]
+        public virtual [[column.name]] [[column.name]] { get; set; }
+        [[/column nchar]][[column varchar]]public string [[column.name]] { get; set; }
+		[[/column varchar]][[column bit]]public bool [[column.name]] { get; set; }
+		[[/column bit]][[column datetime]]public DateTime [[column.name]] { get; set; }
+		[[/column datetime]][[column float]]public double [[column.name]] { get; set; }
+		[[/column float]][[column datetimeoffset]]public DateTime [[column.name]] { get; set; }
+		[[/column datetimeoffset]][[column varbinary]]public string [[column.name]] { get; set; }
+		[[/column varbinary]][[column decimal]]public double [[column.name]] { get; set; }
+		[[/column decimal]]
+    }
+}
+[[/table]][>]

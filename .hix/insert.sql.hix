@@ -1,0 +1,10 @@
+[<]
+--migrate data
+[[table]]--[[table.name]]
+SET IDENTITY_INSERT [SigasCoreDB].[dbo].[[[table.name]]] ON
+insert into [SigasCoreDB].[dbo].[[[table.name]]] 
+	([[column]][[[column.name]]],[[/column]]##yakimechi)
+select [[column]][[[column.name]]],[[/column]]##yakimechi from [ObservacionesWebDB].[dbo].[[[table.name]]] 
+SET IDENTITY_INSERT [SigasCoreDB].[dbo].[[[table.name]]] OFF
+
+[[/table]][>]

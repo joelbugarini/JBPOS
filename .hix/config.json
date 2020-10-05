@@ -1,0 +1,8 @@
+{
+  "Project": "JBPOS",
+  "Database": "Test",
+  "Server": ".\SQLEXPRESS",
+  "WinAuth": "true",
+  "User": "",
+  "Password": ""
+}

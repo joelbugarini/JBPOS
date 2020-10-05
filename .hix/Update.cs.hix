@@ -1,0 +1,58 @@
+[<][[table]]using System;
+using System.Collections.Generic;
+using System.Text;
+using Terminal.Gui;
+using NStack;
+using System.Linq;
+using [[project.name]].Models;
+using [[project.name]].DataContext;
+
+namespace [[project.name]].Views
+{
+    public class [[table.name]]Update
+	{
+		public Window Win { get; set; }
+		public [[project.name]]_DB_Context db { get; set; }
+		public [[table.name]]Update([[project.name]]_DB_Context _db) {
+			db = _db;
+		}
+		public void Render(int _id)
+        {
+			var Win = new Window("Editando [[table.name]]" + _id)
+			{
+				X = 0,
+				Y = 0,
+				Width = Dim.Fill(),
+				Height = Dim.Fill() - 1
+			};
+
+			var [[table.name]] = db.[[table.name]]s.Where(x => x.Id == _id).FirstOrDefault();
+            
+            [[column]]var lbl[[column.name]] = new Label(1, 1, "[[column.name]]:");
+			TextField txt[[column.name]] = new TextField(1, 2, 10, [[table.name]].[[column.name]].ToString());
+			Win.Add(lbl[[column.name]], txt[[column.name]]);[[/column]]
+
+			var btnSave = new Button(40, 20, "Guardar", true);
+			btnSave.Clicked += () =>
+			{
+                [[column int]][[table.name]].[[column.name]] = Convert.ToInt32(txt[[column.name]].Text);
+                [[/column int]][[column varchar]][[table.name]].[[column.name]] = txt[[column.name]].Text;
+                [[/column varchar]][[column bit]][[table.name]].[[column.name]] = Convert.ToBoolean(txt[[column.name]].Text);
+                [[/column bit]][[column datetime]][[table.name]].[[column.name]] = Convert.ToDateTime(txt[[column.name]].Text);
+                [[/column datetime]][[column float]][[table.name]].[[column.name]] = Convert.ToDouble(txt[[column.name]].Text);
+                [[/column float]][[column datetimeoffset]][[table.name]].[[column.name]] = Convert.ToDateTime(txt[[column.name]].Text);
+                [[/column datetimeoffset]][[column varbinary]][[table.name]].[[column.name]] = Convert.ToInt32(txt[[column.name]].Text);
+                [[/column varbinary]][[column decimal]][[table.name]].[[column.name]] = Convert.ToDouble(txt[[column.name]].Text);
+                [[/column decimal]]
+                
+				db.SaveChanges();
+
+				Application.RequestStop();
+			};
+
+			Win.Add(btnSave);
+			Application.Run(Win);
+		}
+	}
+}
+[[/table]][>]
